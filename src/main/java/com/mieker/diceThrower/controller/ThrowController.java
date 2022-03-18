@@ -19,6 +19,11 @@ public class ThrowController {
         this.throwService = throwService;
     }
 
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "hello traveler";
+    }
+
     @GetMapping
     //parameters assume the number of dice rolls
     public int multipleThrows(@RequestParam int d4, @RequestParam int d6, @RequestParam int d8, @RequestParam int d10,
