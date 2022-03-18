@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.mieker.diceThrower.DiceThrowerApplication
+web: java $JAVA_OPTS -jar -Dserver.port=$PORT -cp target/classes:target/dependency/* com.mieker.diceThrower.DiceThrowerApplication
