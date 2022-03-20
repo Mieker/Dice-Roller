@@ -24,10 +24,16 @@ public class RollController {
         return "hello traveler";
     }
 
+//    @GetMapping
+//    //parameters assume the number of dice rolls
+//    public int multipleRolls(@RequestParam int d4, @RequestParam int d6, @RequestParam int d8, @RequestParam int d10,
+//                             @RequestParam int d12, @RequestParam int d20, @RequestParam int modification) {
+//        return rollService.multipleRolls(d4, d6, d8, d10, d12, d20, modification);
+//    }
+
     @GetMapping
-    //parameters assume the number of dice rolls
-    public int multipleRolls(@RequestParam int d4, @RequestParam int d6, @RequestParam int d8, @RequestParam int d10,
-                             @RequestParam int d12, @RequestParam int d20, @RequestParam int modification) {
-        return rollService.multipleRolls(d4, d6, d8, d10, d12, d20, modification);
+    public String multipleRolls(@RequestParam int d4, @RequestParam int d6, @RequestParam int d8, @RequestParam int d10,
+                                @RequestParam int d12, @RequestParam int d20, @RequestParam int modification) {
+        return rollService.printResult(d4, d6, d8, d10, d12, d20, modification);
     }
 }
