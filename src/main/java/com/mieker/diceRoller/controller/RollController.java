@@ -1,11 +1,15 @@
 package com.mieker.diceRoller.controller;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.mieker.diceRoller.model.DataDto;
 import com.mieker.diceRoller.service.RollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.FileNotFoundException;
 
 
 @RestController
@@ -35,5 +39,16 @@ public class RollController {
     public String multipleRolls(@RequestParam int d4, @RequestParam int d6, @RequestParam int d8, @RequestParam int d10,
                                 @RequestParam int d12, @RequestParam int d20, @RequestParam int modification) {
         return rollService.printResult(d4, d6, d8, d10, d12, d20, modification);
+    }
+
+    @GetMapping("/history")
+    public DataDto showHistory() {
+        DataDto dataToShow = new DataDto();
+        try {
+            dataToShow.loadData();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return dataToShow;
     }
 }

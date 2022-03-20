@@ -2,6 +2,8 @@ package com.mieker.diceRoller.service;
 
 import org.springframework.stereotype.Service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 @Service
@@ -44,11 +46,23 @@ public class RollServiceImpl implements RollService {
         result += numberOfD12 * rollDice(12);
         result += numberOfD20 * rollDice(20);
         result += modification;
+        try {
+            saveRollToData(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return result;
     }
 
     private int rollDice(int value) {
         return random.nextInt(value) + 1;
+    }
+
+    private void saveRollToData(int roll) throws IOException {
+
+        FileWriter dataFileWriter = new FileWriter("rolldata.txt", true);
+        dataFileWriter.write(roll + "\n");
+        dataFileWriter.close();
     }
 
 }
