@@ -1,13 +1,13 @@
-package com.mieker.diceThrower;
+package com.mieker.diceRoller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DiceThrowerApplication {
+public class DiceRollerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DiceThrowerApplication.class, args);
+		SpringApplication.run(DiceRollerApplication.class, args);
 	}
 
 }

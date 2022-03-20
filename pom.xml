@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mieker</groupId>
-	<artifactId>diceThrower</artifactId>
+	<artifactId>diceRoller</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>diceThrower</name>
-	<description>REST API of dice throws</description>
+	<name>diceRoller</name>
+	<description>REST API of dice rolls</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

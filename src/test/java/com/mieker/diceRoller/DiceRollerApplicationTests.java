@@ -1,10 +1,10 @@
-package com.mieker.diceThrower;
+package com.mieker.diceRoller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiceThrowerApplicationTests {
+class DiceRollerApplicationTests {
 
 	@Test
 	void contextLoads() {
