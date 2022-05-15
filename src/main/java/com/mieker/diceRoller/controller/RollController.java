@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000/", maxAge = 3600)
+@CrossOrigin(origins = "https://dicethrowerapp.herokuapp.com/*", maxAge = 3600)
 @RequestMapping("/roll")
 public class RollController {
 
