@@ -4,15 +4,13 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.mieker.diceRoller.model.DataDto;
 import com.mieker.diceRoller.service.RollService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.FileNotFoundException;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/", maxAge = 3600)
 @RequestMapping("/roll")
 public class RollController {
 
