@@ -2,7 +2,10 @@ package com.mieker.diceRoller.controller;
 
 import com.mieker.diceRoller.model.DataDto;
 import com.mieker.diceRoller.service.RollService;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.FileNotFoundException;
@@ -39,9 +42,13 @@ public class RollController {
     }
 
     @GetMapping("/d6")
-    public String d6Throw() {
+    public JSONObject d6Throw() {
         int myThrow = rollService.multipleRolls(0, 1, 0, 0, 0, 0, 0);
-        return "{ \"throw\": " + myThrow + " }";
+
+        JSONObject job = new JSONObject();
+        job.put("throw", myThrow);
+
+        return job;
     }
 
     @GetMapping("/history")
