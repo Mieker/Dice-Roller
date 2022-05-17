@@ -45,17 +45,53 @@ public class RollController {
         return rollService.printResult(d4, d6, d8, d10, d12, d20, modification);
     }
 
+    @GetMapping("/d4")
+    public ResponseEntity<?> d4Throw() {
+        int myThrow = rollService.multipleRolls(1, 0, 0, 0, 0, 0, 0);
+        Map throwObj = new HashMap();
+        throwObj.put("throw", myThrow);
+        return new ResponseEntity<>(throwObj, HttpStatus.OK);
+    }
+
     @GetMapping("/d6")
     public ResponseEntity<?> d6Throw() {
         int myThrow = rollService.multipleRolls(0, 1, 0, 0, 0, 0, 0);
-
         Map throwObj = new HashMap();
         throwObj.put("throw", myThrow);
-
         return new ResponseEntity<>(throwObj, HttpStatus.OK);
-
     }
 
+    @GetMapping("/d8")
+    public ResponseEntity<?> d8Throw() {
+        int myThrow = rollService.multipleRolls(0, 0, 1, 0, 0, 0, 0);
+        Map throwObj = new HashMap();
+        throwObj.put("throw", myThrow);
+        return new ResponseEntity<>(throwObj, HttpStatus.OK);
+    }
+
+    @GetMapping("/d10")
+    public ResponseEntity<?> d10Throw() {
+        int myThrow = rollService.multipleRolls(0, 0, 0, 1, 0, 0, 0);
+        Map throwObj = new HashMap();
+        throwObj.put("throw", myThrow);
+        return new ResponseEntity<>(throwObj, HttpStatus.OK);
+    }
+
+    @GetMapping("/d12")
+    public ResponseEntity<?> d12Throw() {
+        int myThrow = rollService.multipleRolls(0, 0, 0, 0, 1, 0, 0);
+        Map throwObj = new HashMap();
+        throwObj.put("throw", myThrow);
+        return new ResponseEntity<>(throwObj, HttpStatus.OK);
+    }
+
+    @GetMapping("/d20")
+    public ResponseEntity<?> d20Throw() {
+        int myThrow = rollService.multipleRolls(0, 0, 0, 0, 0, 1, 0);
+        Map throwObj = new HashMap();
+        throwObj.put("throw", myThrow);
+        return new ResponseEntity<>(throwObj, HttpStatus.OK);
+    }
 
     @GetMapping("/history")
     public DataDto showHistory() {
